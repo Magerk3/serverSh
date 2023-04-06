@@ -111,7 +111,7 @@ router.post('/api/order', async (ctx, next) => {
         return fortune(ctx, 'Bad Request', 400);
     }
 
-    return fortune(ctx, null, 204);
+    return fortune(ctx, address, 204);
 });
 
 app.use(router.routes())
