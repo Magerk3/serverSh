@@ -4,6 +4,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const cors = require('koa2-cors');
 const koaBody = require('koa-body');
+const https = require('https');
 
 const categories = JSON.parse(fs.readFileSync('./data/categories.json'));
 const items = JSON.parse(fs.readFileSync('./data/products.json'));
@@ -116,5 +117,6 @@ app.use(router.routes())
 app.use(router.allowedMethods());
 
 const port = process.env.PORT || 7070;
-const server = http.createServer(app.callback());
+const server = https.createServer(app.callback());
 server.listen(port);
+//console.log(server)
