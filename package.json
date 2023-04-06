@@ -6,8 +6,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "forever server.js",
-    "watch": "forever -w server.js",
-    "ip": "echo The build worker IP address is: %APPVEYOR_BUILD_WORKER_IP%"
+    "watch": "forever -w server.js"
     
   },
   "author": "",
