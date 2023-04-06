@@ -86,6 +86,7 @@ router.get('/api/items/:id', async (ctx, next) => {
 
 router.post('/api/order', async (ctx, next) => {
     const { owner: { phone, address }, items } = ctx.request.body;
+    console.log(phone, address, items)
     if (typeof phone !== 'string') {
         return fortune(ctx, 'Bad Request: Phone', 400);
     }
@@ -117,6 +118,6 @@ app.use(router.routes())
 app.use(router.allowedMethods());
 
 const port = process.env.PORT || 7070;
-const server = https.createServer(app.callback());
+const server = http.createServer(app.callback());
 server.listen(port);
 //console.log(server)
